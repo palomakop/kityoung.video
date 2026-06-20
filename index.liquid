@@ -4,19 +4,23 @@ backgroundVideoId: "1200622808"
 ---
 
 <video-background>
-  <iframe src="https://player.vimeo.com/video/{{backgroundVideoId}}?background=1&pip=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <iframe id="vimeo-player" src="https://player.vimeo.com/video/{{backgroundVideoId}}?background=1&pip=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </video-background>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  (function() {
+    const iframe = document.getElementById('vimeo-player');
+    const player = new Vimeo.Player(iframe);
+    const videoBackground = document.querySelector('video-background');
+
+    player.on('play', function() {
+      videoBackground.classList.add('loaded');
+    });
+  })();
+</script>
 
 <splash-container>
   <h1>KIT YOUNG</h1>
-  <nav>
-    <ul>
-      <li>
-        <a href="/recent-works">Recent Works</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
-    </ul>
-  </nav>
+  {% include "nav.liquid" %}
 </splash-container>

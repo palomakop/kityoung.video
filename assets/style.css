@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Italic-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sixtyfour";
+  src: url("./fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --page-bg-color: #1f1f1f;
+  --text-color: #eef4f5;
+  --link-color: #9cbec8;
+  --link-hover-color: #bdd0d6;
+}
+
+body {
+  background-color: var(--page-bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 1.5em 2.5ch;
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-family: "Sixtyfour", sans-serif;
+  font-size: 2em;
+  font-variation-settings: "SCAN" -20;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+video-background.loaded {
+  opacity: 1;
+}
+
+video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 aspect ratio */
+  transform: translate(-50%, -50%);
+}
+
+splash-container {
+  min-height: calc(90vh - 3em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5em 2.5ch;
+  flex-wrap: wrap;
+}
+
+splash-container nav ul {
+  align-items: center;
+  justify-content: center;
+}
+
+nav li a {
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.1ch;
+}
+
+main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em 2.5ch;
+}
+
+main-menu h1 {
+  margin: 0;
+}
+
+main-menu h1 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
