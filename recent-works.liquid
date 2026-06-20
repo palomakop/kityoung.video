@@ -2,3 +2,13 @@
 layout: default
 title: Recent Works
 ---
+
+<works-index>
+{% assign sortedWorks = collections.works | sort: "date" | reverse %}
+{% for work in sortedWorks %}
+  <a href="{{ work.url }}">
+    <img src="{{ work.data.thumbnail }}" alt="{{ work.data.title }}">
+    <h3><i>{{ work.data.title }}</i>, {{ work.data.date | date: "%Y" }}</h3>
+  </a>
+{% endfor %}
+</works-index>

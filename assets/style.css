@@ -146,3 +146,40 @@ column-container {
   max-width: 70ch;
   margin: 5em auto 8em;
 }
+
+vimeo-embed {
+  display: block;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 90vh;
+  margin: 2em 0;
+}
+
+vimeo-embed iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+}
+
+works-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: 2em;
+  margin: 2em 0;
+}
+
+works-index a {
+  text-decoration: none;
+  text-align: center;
+}
+
+works-index a img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
