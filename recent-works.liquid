@@ -3,6 +3,14 @@ layout: default
 title: Recent Works
 ---
 
+<svg width="0" height="0" style="position: absolute;">
+  <defs>
+    <clipPath id="squircle" clipPathUnits="objectBoundingBox">
+      <path d="M145.7,111.83c-38.14,4.85-75.98,4.79-113.76.13-7.27-.9-14.38-1.99-20.71-5.32-4.81-2.53-7.1-8.9-8.07-14.24-4.18-23.06-4.25-46.45.03-69.49.97-5.24,3.28-11.83,8.07-14.18,7.8-3.83,16.29-4.9,25.04-5.86,34.71-3.82,69.54-3.8,104.26.01,8.58.94,16.94,1.99,24.59,5.69,5.4,2.61,7.64,9.65,8.64,15.48,3.88,22.48,3.85,45.29-.07,67.75-2.77,15.86-11.35,17.92-28.01,20.03Z" transform="scale(0.00566, 0.00866)" />
+    </clipPath>
+  </defs>
+</svg>
+
 <works-index>
 {% assign sortedWorks = collections.works | sort: "date" | reverse %}
 {% for work in sortedWorks %}
