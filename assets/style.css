@@ -24,9 +24,9 @@
 }
 
 :root {
-  --page-bg-color: #1f1f1f;
-  --text-color: #eef4f5;
-  --link-color: #9cbec8;
+  --page-bg-color: #151920;
+  --text-color: #bdd0d6;
+  --link-color: #99cddd;
   --link-hover-color: #bdd0d6;
 }
 
@@ -35,7 +35,6 @@ body {
   color: var(--text-color);
   margin: 0;
   padding: 1.5em 2.5ch;
-  font-size: 1.2em;
   font-family: "Roboto", sans-serif;
   line-height: 1.5em;
 }
@@ -43,7 +42,21 @@ body {
 h1 {
   font-family: "Sixtyfour", sans-serif;
   font-size: 2em;
-  font-variation-settings: "SCAN" -20;
+  font-variation-settings: "SCAN" -20, "BLED" 0;
+  transition: font-variation-settings 0.3s ease;
+  text-transform: uppercase;
+}
+
+@media (hover: hover) {
+  h1:hover {
+    font-variation-settings: "SCAN" -40, "BLED" 80;
+  }
+}
+
+h2 {
+  margin-bottom: 1.5em;
+  text-align: center;
+  font-family: "Sixtyfour", sans-serif;
 }
 
 a {
@@ -126,4 +139,10 @@ main-menu h1 {
 main-menu h1 a {
   color: var(--text-color);
   text-decoration: none;
+}
+
+column-container {
+  display: block;
+  max-width: 70ch;
+  margin: 5em auto 8em;
 }
