@@ -147,35 +147,41 @@ column-container {
   margin: 5em auto 8em;
 }
 
-vimeo-embed {
+video-embed {
   display: block;
   position: relative;
   width: 100vw;
+  max-width: calc(80vh * 16 / 9);
+  max-height: 80vh;
+  aspect-ratio: 16 / 9;
   left: 50%;
   transform: translateX(-50%);
-  max-height: 90vh;
   margin: 2em 0;
 }
 
-vimeo-embed iframe {
-  display: block;
+video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  max-height: 90vh;
-  aspect-ratio: 16 / 9;
-  margin: 0 auto;
+  height: 100%;
 }
 
 works-index {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
-  gap: 2em;
-  margin: 2em 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 4em;
+  margin: 4em;
 }
 
 works-index a {
   text-decoration: none;
   text-align: center;
+}
+
+works-index a picture {
+  display: block;
+  width: 100%;
 }
 
 works-index a img {
