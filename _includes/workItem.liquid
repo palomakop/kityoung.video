@@ -5,3 +5,32 @@ layout: column
 <h2><i>{{title}}</i>, {{ date | date: "%Y" | to_integer }}</h2>
 
 {{content}}
+
+<work-nav>
+  {% assign sortedWorks = collections.works | sort: "date" | reverse %}
+  {% for work in sortedWorks %}
+    {% if work.url == page.url %}
+      {% assign currentIndex = forloop.index0 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign nextIndex = currentIndex | plus: 1 %}
+  {% assign prevIndex = currentIndex | minus: 1 %}
+
+  <div class="nav-links">
+    {% if prevIndex >= 0 %}
+      <a href="{{ sortedWorks[prevIndex].url }}" class="nav-prev"><i>{{ sortedWorks[prevIndex].data.title }}</i><br>🡨</a>
+    {% else %}
+      <span class="nav-disabled"></span>
+    {% endif %}
+
+    <a href="/recent-works/" class="nav-index">Index<br>🡩</a>
+
+    {% if nextIndex < sortedWorks.size %}
+      <a href="{{ sortedWorks[nextIndex].url }}" class="nav-next"><i>{{ sortedWorks[nextIndex].data.title }}</i><br>🡪</a>
+    {% else %}
+      <span class="nav-disabled"></span>
+    {% endif %}
+  </div>
+</work-nav>
